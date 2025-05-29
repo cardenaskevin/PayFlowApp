@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/transactionsFragment"
+        android:icon="@drawable/movimientos"
+        android:title="Movimientos" />
+    <item
+        android:id="@+id/operationsFragment"
+        android:icon="@drawable/operaciones"
+        android:title="Recarga" />
+    <item
+        android:id="@+id/reportFragment"
+        android:icon="@drawable/reporte"
+        android:title="Reporte" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_cancel"
+        android:title="Perfil" />
+</menu>

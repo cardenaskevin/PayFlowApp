@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.auth.SignupFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextAppearance="@style/ToolbarTitleText"
+        app:title="Crea tu cuenta" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/background">
+        <ImageView
+            android:id="@+id/ivWelcome"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/welcome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complete los datos del fomulario"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="17dp"/>
+
+        <!-- Formulario 1 -->
+        <LinearLayout
+            android:id="@+id/formParte1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombres"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            <EditText
+                android:hint="Ingrese sus nombres"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primer Apellido"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:hint="Ingrese su primer apellido"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segundo Apellido"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:hint="Ingrese su segundo apellido"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Nacimiento"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/etFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Seleccione su fecha de nacimiento"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Documento de identidad"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:inputType="number"
+                />
+
+            <EditText
+                android:hint="Ingrese su número de documento"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número celular"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:hint="Ingrese su celular"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contraseña"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:hint="Ingrese su contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:inputType="number"
+                android:maxLength="6"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmar Contraseña"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:hint="Confirme su contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:inputType="number"
+                android:maxLength="6"/>
+
+
+
+            <Button
+                android:id="@+id/btnContinuar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/bgButton"
+                android:text="Continuar"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

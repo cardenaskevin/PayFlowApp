@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF081A18</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bgButton">#FFFFCC00</color>
+    <color name="background">#FF005A2B</color>
+    <color name="primaryTextColor">#FFFFFFFF</color>
+    <color name="secondaryTextColor">#FF5C8AE0</color>
+
+    <color name="dotEmptyColor">#666666</color>
+    <color name="dotFilledColor">#00FF00</color> <!-- verde encendido -->
+
+    <color name="transparent">#00FFFFFF</color>
+</resources>

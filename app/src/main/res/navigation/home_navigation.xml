@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/transactionsFragment">
+
+
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="com.example.myapplication.ui.movimientos.TransactionsFragment"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions" />
+    <fragment
+        android:id="@+id/operationsFragment"
+        android:name="com.example.myapplication.ui.operations.OperationsFragment"
+        android:label="fragment_operations"
+        tools:layout="@layout/fragment_operations" >
+        <action
+            android:id="@+id/action_operationsFragment_to_cashReloadFragment"
+            app:destination="@id/cashReloadFragment" />
+        <action
+            android:id="@+id/action_operationsFragment_to_cardReloadFragment"
+            app:destination="@id/cardReloadFragment" />
+        <action
+            android:id="@+id/action_operationsFragment_to_accountTransferFragment"
+            app:destination="@id/accountTransferFragment" />
+        <action
+            android:id="@+id/action_operationsFragment_to_phoneTransferFragment"
+            app:destination="@id/phoneTransferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.myapplication.ui.report.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplication.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/accountTransferFragment"
+        android:name="com.example.myapplication.ui.operations.AccountTransferFragment"
+        android:label="fragment_account_transfer"
+        tools:layout="@layout/fragment_account_transfer" />
+    <fragment
+        android:id="@+id/cardReloadFragment"
+        android:name="com.example.myapplication.ui.operations.CardReloadFragment"
+        android:label="fragment_card_reload"
+        tools:layout="@layout/fragment_card_reload" />
+    <fragment
+        android:id="@+id/cashReloadFragment"
+        android:name="com.example.myapplication.ui.operations.CashReloadFragment"
+        android:label="fragment_cash_reload"
+        tools:layout="@layout/fragment_cash_reload" />
+    <fragment
+        android:id="@+id/phoneTransferFragment"
+        android:name="com.example.myapplication.ui.operations.PhoneTransferFragment"
+        android:label="fragment_phone_transfer"
+        tools:layout="@layout/fragment_phone_transfer" />
+</navigation>

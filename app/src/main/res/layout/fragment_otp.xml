@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.auth.OtpFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextAppearance="@style/ToolbarTitleText"
+        app:title="Validación OTP" />
+
+    <LinearLayout
+        android:id="@+id/otpContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:gravity="start"
+        android:background="@color/background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingrese el código OTP"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa el codigo OTP que llego a tu celular\n+51 987456315"
+            android:textColor="@color/primaryTextColor"
+
+            android:textSize="14sp"
+            android:layout_marginBottom="17dp"/>
+
+        <!-- Contenedor de los campos OTP -->
+        <LinearLayout
+            android:id="@+id/otpFields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Repetimos 6 EditTexts -->
+            <EditText
+                android:id="@+id/otp1"
+                style="@style/OtpBoxStyle"/>
+            <EditText
+                android:id="@+id/otp2"
+                style="@style/OtpBoxStyle"/>
+            <EditText
+                android:id="@+id/otp3"
+                style="@style/OtpBoxStyle"/>
+            <EditText
+                android:id="@+id/otp4"
+                style="@style/OtpBoxStyle"/>
+            <EditText
+                android:id="@+id/otp5"
+                style="@style/OtpBoxStyle"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verificar"
+            android:layout_marginTop="32dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:backgroundTint="@color/bgButton"
+            android:textColor="@color/secondaryTextColor"/>
+    </LinearLayout>
+
+
+</LinearLayout>
