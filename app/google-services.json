@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "106635891787",
+    "project_id": "playflowapp-cf8b6",
+    "storage_bucket": "playflowapp-cf8b6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106635891787:android:1973200cbbd0acc4ade9ce",
+        "android_client_info": {
+          "package_name": "com.example.payflowapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoWXXQXvFRAwKN9bpjaWnumX7YumagBEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

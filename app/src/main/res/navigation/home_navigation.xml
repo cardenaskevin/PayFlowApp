@@ -9,12 +9,12 @@
 
     <fragment
         android:id="@+id/transactionsFragment"
-        android:name="com.example.myapplication.ui.movimientos.TransactionsFragment"
+        android:name="com.example.payflowapp.ui.movimientos.TransactionsFragment"
         android:label="fragment_transactions"
         tools:layout="@layout/fragment_transactions" />
     <fragment
         android:id="@+id/operationsFragment"
-        android:name="com.example.myapplication.ui.operations.OperationsFragment"
+        android:name="com.example.payflowapp.ui.operations.OperationsFragment"
         android:label="fragment_operations"
         tools:layout="@layout/fragment_operations" >
         <action
@@ -32,32 +32,32 @@
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
-        android:name="com.example.myapplication.ui.report.ReportFragment"
+        android:name="com.example.payflowapp.ui.report.ReportFragment"
         android:label="fragment_report"
         tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.myapplication.ui.profile.ProfileFragment"
+        android:name="com.example.payflowapp.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/accountTransferFragment"
-        android:name="com.example.myapplication.ui.operations.AccountTransferFragment"
+        android:name="com.example.payflowapp.ui.operations.AccountTransferFragment"
         android:label="fragment_account_transfer"
         tools:layout="@layout/fragment_account_transfer" />
     <fragment
         android:id="@+id/cardReloadFragment"
-        android:name="com.example.myapplication.ui.operations.CardReloadFragment"
+        android:name="com.example.payflowapp.ui.operations.CardReloadFragment"
         android:label="fragment_card_reload"
         tools:layout="@layout/fragment_card_reload" />
     <fragment
         android:id="@+id/cashReloadFragment"
-        android:name="com.example.myapplication.ui.operations.CashReloadFragment"
+        android:name="com.example.payflowapp.ui.operations.CashReloadFragment"
         android:label="fragment_cash_reload"
         tools:layout="@layout/fragment_cash_reload" />
     <fragment
         android:id="@+id/phoneTransferFragment"
-        android:name="com.example.myapplication.ui.operations.PhoneTransferFragment"
+        android:name="com.example.payflowapp.ui.operations.PhoneTransferFragment"
         android:label="fragment_phone_transfer"
         tools:layout="@layout/fragment_phone_transfer" />
 </navigation>

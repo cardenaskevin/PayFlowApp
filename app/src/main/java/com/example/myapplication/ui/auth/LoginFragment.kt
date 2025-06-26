@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.auth
+package com.example.payflowapp.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,8 +15,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.HomeActivity
-import com.example.myapplication.R
+import com.example.payflowapp.HomeActivity
+import com.example.payflowapp.R
 
 class LoginFragment : Fragment() {
 

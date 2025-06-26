@@ -1,11 +1,11 @@
-package com.example.myapplication.ui.report
+package com.example.payflowapp.ui.report
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myapplication.R
+import com.example.payflowapp.R
 
 
 class ReportFragment : Fragment() {

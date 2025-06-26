@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.profile
+package com.example.payflowapp.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.example.myapplication.MainActivity
-import com.example.myapplication.R
+import com.example.payflowapp.MainActivity
+import com.example.payflowapp.R
 
 class ProfileFragment : Fragment() {
 

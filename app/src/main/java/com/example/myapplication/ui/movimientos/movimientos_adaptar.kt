@@ -1,11 +1,11 @@
-package com.example.myapplication.ui.movimientos
+package com.example.payflowapp.ui.movimientos
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
+import com.example.payflowapp.R
 
 data class Transaction(val title: String, val amount: String)
 

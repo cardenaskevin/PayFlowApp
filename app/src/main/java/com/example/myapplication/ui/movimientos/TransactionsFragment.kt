@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.movimientos
+package com.example.payflowapp.ui.movimientos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
+import com.example.payflowapp.R
 
 
 class TransactionsFragment : Fragment() {

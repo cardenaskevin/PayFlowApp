@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.auth
+package com.example.payflowapp.ui.auth
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -13,9 +13,9 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.HomeActivity
-import com.example.myapplication.MainActivity
-import com.example.myapplication.R
+import com.example.payflowapp.HomeActivity
+import com.example.payflowapp.MainActivity
+import com.example.payflowapp.R
 import com.google.android.material.appbar.MaterialToolbar
 import java.util.Calendar
 

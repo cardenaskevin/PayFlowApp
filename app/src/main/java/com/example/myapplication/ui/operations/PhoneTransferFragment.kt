@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.operations
+package com.example.payflowapp.ui.operations
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.R
+import com.example.payflowapp.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class PhoneTransferFragment : Fragment() {

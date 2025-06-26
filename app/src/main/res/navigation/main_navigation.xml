@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.myapplication.ui.auth.LoginFragment"
+        android:name="com.example.payflowapp.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
 
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.myapplication.SplashFragment"
+        android:name="com.example.payflowapp.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
-        android:name="com.example.myapplication.ui.auth.OtpFragment"
+        android:name="com.example.payflowapp.ui.auth.OtpFragment"
         android:label="fragment_otp"
         tools:layout="@layout/fragment_otp" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/recoverPasswordFragment"
-        android:name="com.example.myapplication.ui.auth.RecoverPasswordFragment"
+        android:name="com.example.payflowapp.ui.auth.RecoverPasswordFragment"
         android:label="fragment_recover_password"
         tools:layout="@layout/fragment_recover_password" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.myapplication.ui.auth.SignupFragment"
+        android:name="com.example.payflowapp.ui.auth.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -70,12 +70,12 @@
 
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.example.myapplication.HomeActivity"
+        android:name="com.example.payflowapp.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.myapplication.ui.auth.NewPasswordFragment"
+        android:name="com.example.payflowapp.ui.auth.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action

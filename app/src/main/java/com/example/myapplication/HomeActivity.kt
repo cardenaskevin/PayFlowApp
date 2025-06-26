@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.payflowapp
 
 import android.os.Bundle
 import android.view.View

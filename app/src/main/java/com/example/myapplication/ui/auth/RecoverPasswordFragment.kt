@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.auth
+package com.example.payflowapp.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.R
+import com.example.payflowapp.R
 import com.google.android.material.appbar.MaterialToolbar
 
 
