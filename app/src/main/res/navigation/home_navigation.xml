@@ -11,7 +11,11 @@
         android:id="@+id/transactionsFragment"
         android:name="com.example.payflowapp.ui.movimientos.TransactionsFragment"
         android:label="fragment_transactions"
-        tools:layout="@layout/fragment_transactions" />
+        tools:layout="@layout/fragment_transactions" >
+        <action
+            android:id="@+id/action_transactionsFragment_to_safeZoneFragment"
+            app:destination="@id/safeZoneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/operationsFragment"
         android:name="com.example.payflowapp.ui.operations.OperationsFragment"
@@ -60,4 +64,13 @@
         android:name="com.example.payflowapp.ui.operations.PhoneTransferFragment"
         android:label="fragment_phone_transfer"
         tools:layout="@layout/fragment_phone_transfer" />
+    <fragment
+        android:id="@+id/safeZoneFragment"
+        android:name="com.example.payflowapp.ui.auth.SafeZoneFragment"
+        android:label="fragment_safe_zone"
+        tools:layout="@layout/fragment_safe_zone" >
+        <action
+            android:id="@+id/action_safeZoneFragment_to_transactionsFragment"
+            app:destination="@id/transactionsFragment" />
+    </fragment>
 </navigation>

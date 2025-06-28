@@ -32,9 +32,10 @@
                 android:src="@drawable/ic_card" />
 
             <TextView
+                android:id="@+id/tvMaskedCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="***1234"
+                android:text="**** **** **** 1234"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black" />
@@ -65,25 +66,32 @@
                 android:layout_height="64dp"
                 android:src="@drawable/ic_card" />
 
+            <!-- Número completo -->
             <TextView
+                android:id="@+id/tvCardNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="123456789013"
+                android:text="1234 5678 9012 3456"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black" />
 
+            <!-- CVV -->
             <TextView
+                android:id="@+id/tvCardCVV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1-123456789013"
+                android:text="CVV: 123"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black" />
+
+            <!-- Fecha de expiración -->
             <TextView
+                android:id="@+id/tvCardExpiry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="999"
+                android:text="Expira: 12/28"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black" />
