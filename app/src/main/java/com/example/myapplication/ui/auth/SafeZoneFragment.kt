@@ -314,4 +314,3 @@ class SafeZoneFragment : Fragment(), OnMapReadyCallback {
     }
 }
 */
-
