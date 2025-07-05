@@ -99,6 +99,20 @@ class AuthRepository {
             }
     }
 
+    fun getUserById(userId: String, callback: (User?) -> Unit) {
+        FirebaseHelper.userRef.document(userId).get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val user = document.toObject(User::class.java)
+                    callback(user)
+                } else {
+                    callback(null)
+                }
+            }
+            .addOnFailureListener { e ->
+                callback(null)
+            }
+    }
 
     fun checkUserExists00(dni: String, androidId: String, callback: (Boolean) -> Unit) {
         FirebaseHelper.userRef

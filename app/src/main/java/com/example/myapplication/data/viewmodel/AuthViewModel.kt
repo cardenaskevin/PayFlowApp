@@ -18,6 +18,17 @@ class AuthViewModel : ViewModel() {
     private val _locationUpdateResult = MutableLiveData<Result<Boolean>>()
     val locationUpdateResult: LiveData<Result<Boolean>> get() = _locationUpdateResult
 
+    private val _user = MutableLiveData<User?>()
+    val user: LiveData<User?> get() = _user
+
+    fun getUserById(userId: String) {
+        repository.getUserById(userId) { user ->
+            if (user != null) {
+                _user.postValue(user)
+            }
+        }
+    }
+
     fun updateUserLocation(userId: String, latitud: Double, longitud: Double) {
         repository.updateUserLocation(userId, latitud, longitud)
             .addOnSuccessListener {

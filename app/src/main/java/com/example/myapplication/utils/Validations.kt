@@ -21,4 +21,14 @@ object Validations {
     fun isSamePassword(p1: String, p2: String): Boolean {
         return p1 == p2
     }
+
+    // ✅ Nueva validación de número de tarjeta
+    fun isValidCardNumber(number: String): Boolean {
+        return number.length in 13..19 && number.all { it.isDigit() }
+    }
+
+    // ✅ Nueva validación de CVV (3 o 4 dígitos)
+    fun isValidCVV(cvv: String): Boolean {
+        return cvv.length in 3..4 && cvv.all { it.isDigit() }
+    }
 }

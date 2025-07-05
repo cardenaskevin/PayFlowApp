@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Complete los siguientes datos para Recargar una Tarjeta"
+                android:text="Complete los siguientes datos para recargar tu billetera PayflowApp"
                 android:textSize="24sp"
                 android:textColor="@color/white"/>
 
@@ -49,12 +49,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nro. de Cuenta o CCI"
+                    android:text="Nro. de tarjeta"
                     android:textColor="@color/primaryTextColor"
                     android:textStyle="bold"
                     android:textSize="14sp"/>
                 <EditText
-                    android:hint="Ingrese su Nro. de Cuenta o CCI"
+                    android:id="@+id/etNroTarjeta"
+                    android:hint="Ingrese su Nro. de tarjeta"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:background="@color/white"
@@ -74,6 +75,7 @@
                     android:textSize="14sp"/>
 
                 <EditText
+                    android:id="@+id/etCvv"
                     android:hint="Ingrese su CVV"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
@@ -95,6 +97,7 @@
                     android:textSize="14sp"/>
 
                 <EditText
+                    android:id="@+id/etMonto"
                     android:hint="Ingrese su monto"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
@@ -149,13 +152,15 @@
 
 
         <TextView
+            android:id="@+id/tvNroCuentaS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nro. de Cuenta: ****4564"
+            android:text="Nro. de Cuenta: **4564"
             android:textSize="16sp"
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/tvMontoS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Monto: 64.00 soles"
@@ -163,6 +168,7 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/tvHoraS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hora: 12:12:12"
@@ -170,6 +176,7 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/tvUuidS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Código de Operación: 123456"

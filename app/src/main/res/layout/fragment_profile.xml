@@ -12,153 +12,157 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true">
-    <LinearLayout
-        android:id="@+id/otpContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="25dp"
-        android:gravity="start"
-        android:background="@color/background">
-
         <LinearLayout
+            android:id="@+id/otpContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="17dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Mi Perfil"
-                android:textSize="24sp"
-                android:textAlignment="center"
-                android:textColor="@color/white"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="25dp"
+            android:gravity="start"
+            android:background="@color/background">
 
-            <ImageView
-                android:id="@+id/ivEdit"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:src="@drawable/ic_edit"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="17dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mi Perfil"
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_edit"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombres"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            <EditText
+                android:id="@+id/tvNombres"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:focusable="false"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primer Apellido"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/tvPrimerApellido"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:focusable="false"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segundo Apellido"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/tvSegundoApellido"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:focusable="false"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Nacimiento"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/etFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Seleccione su fecha de nacimiento"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número celular"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/tvCelular"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:focusable="false"/>
+
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:backgroundTint="@color/bgButton"
+                android:text="Cerrar Sesión"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+
+
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombres"
-            android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-        <EditText
-            android:hint="Ingrese sus nombres"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:padding="10dp"/>
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Primer Apellido"
-            android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:hint="Ingrese su primer apellido"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:padding="10dp" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Segundo Apellido"
-            android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:hint="Ingrese su segundo apellido"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:padding="10dp" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fecha de Nacimiento"
-            android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:id="@+id/etFechaNacimiento"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:hint="Seleccione su fecha de nacimiento"
-            android:focusable="false"
-            android:clickable="true"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:padding="10dp"/>
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Número celular"
-            android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:hint="Ingrese su celular"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:inputType="number"
-            android:padding="10dp" />
-
-
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:backgroundTint="@color/bgButton"
-            android:text="Cerrar Sesión"
-            android:textColor="@color/secondaryTextColor"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-
-
-
-
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

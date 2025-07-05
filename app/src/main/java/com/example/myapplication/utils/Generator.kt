@@ -27,4 +27,10 @@ object GeneratorUtils {
     fun generateUserId(): String {
         return UUID.randomUUID().toString()
     }
+
+    // Utilidad para obtener fecha actual
+    fun getCurrentDateTime(): String {
+        val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        return formatter.format(Date())
+    }
 }

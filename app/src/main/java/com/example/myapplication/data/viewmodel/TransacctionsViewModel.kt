@@ -1,0 +1,75 @@
+package com.example.payflowapp.data.viewmodel
+
+import android.content.Context
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.payflowapp.data.model.Transacction
+import com.example.payflowapp.data.model.User
+import com.example.payflowapp.data.model.Wallet
+import com.example.payflowapp.data.repository.TransacctionsRepository
+
+
+class TransacctionsViewModel : ViewModel() {
+    private val repository = TransacctionsRepository()
+
+    private val _insertResult = MutableLiveData<Result<Transacction>>()
+    val insertResult: LiveData<Result<Transacction>> get() = _insertResult
+
+    private val _wallet = MutableLiveData<Wallet?>()
+    val wallet: LiveData<Wallet?> get() = _wallet
+
+    private val _transactions = MutableLiveData<List<Transacction>>()
+    val transactions: LiveData<List<Transacction>> get() = _transactions
+
+    private val _user = MutableLiveData<User?>()
+    val user: LiveData<User?> get() = _user
+
+    fun fetchUser(userId: String) {
+        repository.getUserById(userId)
+            .addOnSuccessListener { snapshot ->
+                val user = snapshot.toObject(User::class.java)
+                _user.postValue(user)
+            }
+            .addOnFailureListener {
+                _user.postValue(null)
+            }
+    }
+
+
+
+    fun insertTransactionCardReload(context: Context, amount: String) {
+        repository.insertTransactionCardReload(context, amount)
+            .addOnSuccessListener { transacction ->
+                _insertResult.postValue(Result.success(transacction))
+            }
+            .addOnFailureListener { e ->
+                _insertResult.postValue(Result.failure(e))
+            }
+    }
+
+
+
+    fun fetchWallet(userId: String) {
+        repository.getWalletByUserId(userId)
+            .addOnSuccessListener { snapshot ->
+                val wallet = snapshot.documents.firstOrNull()?.toObject(Wallet::class.java)
+                _wallet.postValue(wallet)
+            }
+            .addOnFailureListener {
+                _wallet.postValue(null)
+            }
+    }
+
+    fun fetchTransactions(userId: String) {
+        repository.getTransacctionsByUserId(userId)
+            .addOnSuccessListener { snapshot ->
+                val list = snapshot.documents.mapNotNull { it.toObject(Transacction::class.java) }
+                _transactions.postValue(list)
+            }
+            .addOnFailureListener {
+                _transactions.postValue(emptyList())
+            }
+    }
+
+}

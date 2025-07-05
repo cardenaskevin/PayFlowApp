@@ -5,13 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
 import com.example.payflowapp.R
-import com.google.android.material.appbar.MaterialToolbar
 
 class OperationsFragment : Fragment() {
 
