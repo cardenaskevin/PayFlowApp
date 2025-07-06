@@ -24,7 +24,7 @@
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="64dp"
@@ -58,23 +58,40 @@
             android:background="@color/white"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:gravity="center">
 
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:src="@drawable/ic_card" />
+                android:src="@drawable/iconotarjeta" />
 
-            <!-- Número completo -->
-            <TextView
-                android:id="@+id/tvCardNumber"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
                 android:layout_height="wrap_content"
-                android:text="1234 5678 9012 3456"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black" />
+                android:layout_width="match_parent">
+                <!-- Número completo -->
+                <TextView
+                    android:id="@+id/tvCardNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234 5678 9012 3456"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black" />
+                <ImageButton
+                    android:src="@drawable/iconocopiar"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/btnCopy"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@color/white"
+                    android:text="Copiar"/>
+            </LinearLayout>
+            <!-- Número completo -->
+
 
             <!-- CVV -->
             <TextView
