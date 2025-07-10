@@ -89,7 +89,7 @@ class TransactionsFragment : Fragment() {
 
                 saldoTitleText.setOnClickListener {
                     isSaldoVisible = !isSaldoVisible
-                    saldoText.text = if (isSaldoVisible) "S/. ${w.balance}" else ""
+                    saldoText.text = if (isSaldoVisible) "S/. ${w.balance}" else "****"
                     saldoTitleText.text = if (isSaldoVisible) "Ocultar saldo" else "Ver Saldo"
                 }
             }
@@ -102,9 +102,11 @@ class TransactionsFragment : Fragment() {
             list.forEach { transac ->
                 Log.d("DEBUG_TRANS", "UUID: ${transac.uuid}, Monto: ${transac.amount}, Fecha: ${transac.date}")
             }
-            transactionList.adapter = TransactionAdapter(list.map {
-                Transaction(it.uuid, "S/. ${it.amount}")
-            })
+
+            val prefs = requireContext().getSharedPreferences("user_data", Context.MODE_PRIVATE)
+            val currentUserId = prefs.getString("user_id", "") ?: ""
+
+            transactionList.adapter = TransactionAdapter(list, currentUserId)
         }
 
         viewModel.user.observe(viewLifecycleOwner) { user ->
@@ -115,6 +117,8 @@ class TransactionsFragment : Fragment() {
                 showZonaSeguraDialog()
             }
         }
+
+
 
     }
 

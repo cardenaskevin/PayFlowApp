@@ -9,3 +9,9 @@ data class Transacction(val id: String = "",
                         val userCreate: String = "",
                         val date: String = ""
 )
+
+data class TransferResult(
+    val transaction: Transacction,
+    val receiverName: String,
+    val receiverLastName: String
+)

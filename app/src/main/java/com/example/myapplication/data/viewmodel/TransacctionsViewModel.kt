@@ -1,10 +1,12 @@
 package com.example.payflowapp.data.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.payflowapp.data.model.Transacction
+import com.example.payflowapp.data.model.TransferResult
 import com.example.payflowapp.data.model.User
 import com.example.payflowapp.data.model.Wallet
 import com.example.payflowapp.data.repository.TransacctionsRepository
@@ -16,6 +18,9 @@ class TransacctionsViewModel : ViewModel() {
     private val _insertResult = MutableLiveData<Result<Transacction>>()
     val insertResult: LiveData<Result<Transacction>> get() = _insertResult
 
+    private val _insertTransferResult = MutableLiveData<Result<TransferResult>>()
+    val insertTransferResult: LiveData<Result<TransferResult>> get() = _insertTransferResult
+
     private val _wallet = MutableLiveData<Wallet?>()
     val wallet: LiveData<Wallet?> get() = _wallet
 
@@ -25,6 +30,7 @@ class TransacctionsViewModel : ViewModel() {
     private val _user = MutableLiveData<User?>()
     val user: LiveData<User?> get() = _user
 
+    /*
     fun fetchUser(userId: String) {
         repository.getUserById(userId)
             .addOnSuccessListener { snapshot ->
@@ -33,6 +39,36 @@ class TransacctionsViewModel : ViewModel() {
             }
             .addOnFailureListener {
                 _user.postValue(null)
+            }
+    }
+*/
+    fun transferPointsByPhoneNumber(context: Context, phoneNumber: String, amount: Double) {
+        repository.transferPointsByPhoneNumber(context, amount, phoneNumber)
+            .addOnSuccessListener { result ->
+                _insertTransferResult.postValue(Result.success(result))
+            }
+            .addOnFailureListener { e ->
+                _insertTransferResult.postValue(Result.failure(e))
+            }
+    }
+
+    fun transferPoints(context: Context, accountNumber: String, amount: Double) {
+        repository.transferPointsByAccountNumber(context, amount, accountNumber)
+            .addOnSuccessListener { result ->
+                _insertTransferResult.postValue(Result.success(result))
+            }
+            .addOnFailureListener { e ->
+                _insertTransferResult.postValue(Result.failure(e))
+            }
+    }
+
+    fun insertTransactionCashReload(context: Context, amount: String) {
+        repository.insertTransactionCashReload(context, amount)
+            .addOnSuccessListener { transacction ->
+                _insertResult.postValue(Result.success(transacction))
+            }
+            .addOnFailureListener { e ->
+                _insertResult.postValue(Result.failure(e))
             }
     }
 
@@ -63,6 +99,17 @@ class TransacctionsViewModel : ViewModel() {
 
     fun fetchTransactions(userId: String) {
         repository.getTransacctionsByUserId(userId)
+            .addOnSuccessListener { combinedList ->
+                _transactions.postValue(combinedList)
+            }
+            .addOnFailureListener {
+                _transactions.postValue(emptyList())
+            }
+    }
+
+
+    fun fetchTransactionsOld(userId: String) {
+        repository.getTransacctionsByUserIdOld(userId)
             .addOnSuccessListener { snapshot ->
                 val list = snapshot.documents.mapNotNull { it.toObject(Transacction::class.java) }
                 _transactions.postValue(list)

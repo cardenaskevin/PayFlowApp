@@ -41,6 +41,7 @@
                 android:layout_marginBottom="10dp"/>
 
             <EditText
+                android:id="@+id/etAmout"
                 android:hint="Ingrese su monto"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"

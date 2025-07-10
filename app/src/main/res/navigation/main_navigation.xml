@@ -48,6 +48,38 @@
             android:name="mode"
             app:argType="string"
             android:defaultValue="signup" />
+        <argument
+            android:name="names"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="firstLastname"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="secondLastname"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="birthday"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="dni"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="phone"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="password"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="confirmPassword"
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/recoverPasswordFragment"
