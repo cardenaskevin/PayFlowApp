@@ -2,6 +2,7 @@ package com.example.payflowapp.data.repository
 
 import android.content.Context
 import com.example.payflowapp.data.firebase.FirebaseHelper
+import com.example.payflowapp.data.model.ReportSummary
 import com.example.payflowapp.data.model.Transacction
 import com.example.payflowapp.data.model.TransferResult
 import com.example.payflowapp.utils.GeneratorUtils
@@ -12,6 +13,39 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 
 class TransacctionsRepository {
+
+    fun getMonthlyReportData(userId: String, month: Int, year: Int): Task<Map<Int, ReportSummary>> {
+        return FirebaseHelper.transactionRef
+            .whereEqualTo("userCreate", userId)
+            .get()
+            .continueWith { task ->
+                if (!task.isSuccessful) throw task.exception ?: Exception("Error al consultar transacciones")
+
+                val result = task.result?.documents ?: emptyList()
+
+                val filtered = result.mapNotNull { it.toObject(Transacction::class.java) }
+                    .filter { trans ->
+                        val parts = trans.date.split(" ")[0].split("-")
+                        val tYear = parts[0].toIntOrNull() ?: return@filter false
+                        val tMonth = parts[1].toIntOrNull() ?: return@filter false
+
+                        //tYear == year && tMonth == month
+                        // Si month == 0, trae todos los meses del año
+                        tYear == year && (month == 0 || tMonth == month)
+
+
+                    }
+
+                val summaryMap = filtered.groupBy { it.type }
+                    .mapValues { entry ->
+                        val total = entry.value.sumOf { it.amount }
+                        val count = entry.value.size
+                        ReportSummary(count, total)
+                    }
+
+                summaryMap
+            }
+    }
 
     fun transferPointsByPhoneNumber(
         context: Context,

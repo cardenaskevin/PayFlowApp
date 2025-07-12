@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.payflowapp.data.model.ReportSummary
 import com.example.payflowapp.data.model.Transacction
 import com.example.payflowapp.data.model.TransferResult
 import com.example.payflowapp.data.model.User
@@ -29,6 +30,19 @@ class TransacctionsViewModel : ViewModel() {
 
     private val _user = MutableLiveData<User?>()
     val user: LiveData<User?> get() = _user
+
+    private val _reportData = MutableLiveData<Map<Int, ReportSummary>>()
+    val reportData: LiveData<Map<Int, ReportSummary>> get() = _reportData
+
+    fun fetchReport(userId: String, month: Int, year: Int) {
+        repository.getMonthlyReportData(userId, month, year)
+            .addOnSuccessListener { reportMap ->
+                _reportData.postValue(reportMap)
+            }
+            .addOnFailureListener {
+                _reportData.postValue(emptyMap())
+            }
+    }
 
     /*
     fun fetchUser(userId: String) {

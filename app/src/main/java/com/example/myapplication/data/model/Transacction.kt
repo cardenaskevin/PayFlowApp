@@ -15,3 +15,8 @@ data class TransferResult(
     val receiverName: String,
     val receiverLastName: String
 )
+
+data class ReportSummary(
+    val count: Int,
+    val totalAmount: Double
+)
