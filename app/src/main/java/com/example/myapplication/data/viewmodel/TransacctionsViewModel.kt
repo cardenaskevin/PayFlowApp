@@ -44,7 +44,7 @@ class TransacctionsViewModel : ViewModel() {
             }
     }
 
-    /*
+
     fun fetchUser(userId: String) {
         repository.getUserById(userId)
             .addOnSuccessListener { snapshot ->
@@ -55,7 +55,7 @@ class TransacctionsViewModel : ViewModel() {
                 _user.postValue(null)
             }
     }
-*/
+
     fun transferPointsByPhoneNumber(context: Context, phoneNumber: String, amount: Double) {
         repository.transferPointsByPhoneNumber(context, amount, phoneNumber)
             .addOnSuccessListener { result ->

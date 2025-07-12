@@ -27,6 +27,7 @@ class TransactionsFragment : Fragment() {
     private lateinit var saldoTitleText: TextView
 
     private var isSaldoVisible = false
+    private var zonaSeguraDialogMostrado = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,9 +77,11 @@ class TransactionsFragment : Fragment() {
         val prefs = requireContext().getSharedPreferences("user_data", Context.MODE_PRIVATE)
         val userId = prefs.getString("user_id", "") ?: return
 
-        val viewModel = ViewModelProvider(this)[TransacctionsViewModel::class.java]
+        viewModel = ViewModelProvider(this)[TransacctionsViewModel::class.java]
+
         viewModel.fetchWallet(userId)
         viewModel.fetchTransactions(userId)
+        viewModel.fetchUser(userId)
 
         viewModel.wallet.observe(viewLifecycleOwner) { wallet ->
             wallet?.let { w ->
@@ -106,6 +109,8 @@ class TransactionsFragment : Fragment() {
             val prefs = requireContext().getSharedPreferences("user_data", Context.MODE_PRIVATE)
             val currentUserId = prefs.getString("user_id", "") ?: ""
 
+            val latitud = prefs.getFloat("latitud", 0f)
+            val longitud = prefs.getFloat("longitud", 0f)
             transactionList.adapter = TransactionAdapter(list, currentUserId)
         }
 
@@ -113,7 +118,8 @@ class TransactionsFragment : Fragment() {
             val lat = user?.latitud ?: 0.0
             val lng = user?.longitud ?: 0.0
 
-            if (lat == 0.0 || lng == 0.0) {
+            if ((lat == 0.0 || lng == 0.0) && !zonaSeguraDialogMostrado){
+                zonaSeguraDialogMostrado = true
                 showZonaSeguraDialog()
             }
         }
